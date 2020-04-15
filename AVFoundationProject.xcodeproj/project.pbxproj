@@ -15,6 +15,9 @@
 		0BB17E9D244788B300D12FC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB17E9C244788B300D12FC4 /* Assets.xcassets */; };
 		0BB17EA0244788B300D12FC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB17E9E244788B300D12FC4 /* LaunchScreen.storyboard */; };
 		0BB17EAB244788B300D12FC4 /* AVFoundationProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17EAA244788B300D12FC4 /* AVFoundationProjectTests.swift */; };
+		0BB17EB62447892500D12FC4 /* AhadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17EB52447892500D12FC4 /* AhadViewController.swift */; };
+		0BB17EB82447892A00D12FC4 /* LiliaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */; };
+		0BB17EBA2447893100D12FC4 /* OscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17EB92447893100D12FC4 /* OscarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		0BB17EA6244788B300D12FC4 /* AVFoundationProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVFoundationProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB17EAA244788B300D12FC4 /* AVFoundationProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVFoundationProjectTests.swift; sourceTree = "<group>"; };
 		0BB17EAC244788B300D12FC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BB17EB52447892500D12FC4 /* AhadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhadViewController.swift; sourceTree = "<group>"; };
+		0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiliaViewController.swift; sourceTree = "<group>"; };
+		0BB17EB92447893100D12FC4 /* OscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,9 @@
 				0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */,
 				0BB17E94244788AE00D12FC4 /* ViewController.swift */,
 				0BB17E96244788AE00D12FC4 /* Main.storyboard */,
+				0BB17EB52447892500D12FC4 /* AhadViewController.swift */,
+				0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */,
+				0BB17EB92447893100D12FC4 /* OscarViewController.swift */,
 				0BB17E9C244788B300D12FC4 /* Assets.xcassets */,
 				0BB17E9E244788B300D12FC4 /* LaunchScreen.storyboard */,
 				0BB17EA1244788B300D12FC4 /* Info.plist */,
@@ -203,7 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BB17EBA2447893100D12FC4 /* OscarViewController.swift in Sources */,
+				0BB17EB82447892A00D12FC4 /* LiliaViewController.swift in Sources */,
 				0BB17E95244788AE00D12FC4 /* ViewController.swift in Sources */,
+				0BB17EB62447892500D12FC4 /* AhadViewController.swift in Sources */,
 				0BB17E91244788AE00D12FC4 /* AppDelegate.swift in Sources */,
 				0BB17E9B244788AE00D12FC4 /* AVFoundationProject.xcdatamodeld in Sources */,
 				0BB17E93244788AE00D12FC4 /* SceneDelegate.swift in Sources */,
