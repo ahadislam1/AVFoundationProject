@@ -27,15 +27,24 @@ class ADetailViewController: UIViewController {
         let iv = UIImageView(image: UIImage(systemName: "video"))
         iv.backgroundColor = .systemYellow
         iv.contentMode = .scaleAspectFit
+        iv.layer.cornerRadius = 5
+        iv.clipsToBounds = true
         return iv
+    }()
+    
+    private lazy var textField: UITextField = {
+        let tf = UITextField()
+        tf.backgroundColor = .secondarySystemBackground
+        tf.borderStyle = .bezel
+        return tf
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemRed
-        setupNavigation()
-        setupImageView()
+        configureView()
+        let x = imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+        print(x)
     }
     
     @objc
@@ -63,6 +72,13 @@ class ADetailViewController: UIViewController {
         present(imagePickerController, animated: true)
     }
     
+    fileprivate func configureView() {
+        view.backgroundColor = .systemRed
+        setupNavigation()
+        setupImageView()
+        setupTextField()
+    }
+    
     private func setupNavigation() {
         navigationItem.rightBarButtonItem = barButton
     }
@@ -72,9 +88,18 @@ class ADetailViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)])
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            imageView.widthAnchor.constraint(equalToConstant: view.frame.width - 24),
+            imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.33)])
+    }
+    
+    private func setupTextField() {
+        view.addSubview(textField)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            textField.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            textField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textField.widthAnchor.constraint(equalToConstant: view.frame.width / 2)])
     }
     
     
