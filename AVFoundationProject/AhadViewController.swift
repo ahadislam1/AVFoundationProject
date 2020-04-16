@@ -20,7 +20,7 @@ class AhadViewController: UIViewController {
     }()
     
     private lazy var addBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonPressed))
         return button
     }()
     
@@ -32,7 +32,7 @@ class AhadViewController: UIViewController {
     
     @objc
     private func addBarButtonPressed() {
-        
+        navigationController?.pushViewController(ADetailViewController(), animated: true)
     }
     
     private func configureView() {

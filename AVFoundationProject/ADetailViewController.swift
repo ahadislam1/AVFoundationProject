@@ -9,11 +9,19 @@
 import UIKit
 
 class ADetailViewController: UIViewController {
-
+    
+    private lazy var imagePickerController: UIImagePickerController = {
+        let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
+        let pc = UIImagePickerController()
+        return pc
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemRed
     }
     
-
+    
 }
