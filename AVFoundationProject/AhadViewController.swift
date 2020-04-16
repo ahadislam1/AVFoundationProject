@@ -19,15 +19,31 @@ class AhadViewController: UIViewController {
         return cv
     }()
     
+    private lazy var addBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
     }
     
+    @objc
+    private func addBarButtonPressed() {
+        
+    }
+    
     private func configureView() {
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .systemBackground
         setupCollectionView()
+        setupNavigation()
+    }
+    
+    private func setupNavigation() {
+        title = "Text"
+        navigationItem.rightBarButtonItem = addBarButton
     }
     
     private func setupCollectionView() {
@@ -42,9 +58,7 @@ class AhadViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
     }
-    
-    
-    
+        
 }
 
 extension AhadViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
