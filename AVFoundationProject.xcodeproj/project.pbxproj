@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BA7718B2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */; };
+		0BA7718D244903A6001C9F9F /* Data+ConvertToURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */; };
 		0BB17E91244788AE00D12FC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E90244788AE00D12FC4 /* AppDelegate.swift */; };
 		0BB17E93244788AE00D12FC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */; };
 		0BB17E95244788AE00D12FC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E94244788AE00D12FC4 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+VideoPreviewThumbnail.swift"; sourceTree = "<group>"; };
+		0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+ConvertToURL.swift"; sourceTree = "<group>"; };
 		0BB17E8D244788AE00D12FC4 /* AVFoundationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB17E90244788AE00D12FC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */,
 				A6059A742448E35800124018 /* LiliaCell.swift */,
 				0BB17EB92447893100D12FC4 /* OscarViewController.swift */,
+				0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */,
+				0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */,
 				A6059A722448E34E00124018 /* LiliaStoryboard.storyboard */,
 				0BB17E9C244788B300D12FC4 /* Assets.xcassets */,
 				0BB17E9E244788B300D12FC4 /* LaunchScreen.storyboard */,
@@ -323,9 +329,11 @@
 			files = (
 				0BB17EBA2447893100D12FC4 /* OscarViewController.swift in Sources */,
 				0BEB26962448C6EC006E3104 /* ADetailViewController.swift in Sources */,
+				0BA7718D244903A6001C9F9F /* Data+ConvertToURL.swift in Sources */,
 				0BB17EB82447892A00D12FC4 /* LiliaViewController.swift in Sources */,
 				0BB17E95244788AE00D12FC4 /* ViewController.swift in Sources */,
 				0BB17EB62447892500D12FC4 /* AhadViewController.swift in Sources */,
+				0BA7718B2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift in Sources */,
 				0BB17E91244788AE00D12FC4 /* AppDelegate.swift in Sources */,
 				A6059A752448E35800124018 /* LiliaCell.swift in Sources */,
 				0BB17E9B244788AE00D12FC4 /* AVFoundationProject.xcdatamodeld in Sources */,
