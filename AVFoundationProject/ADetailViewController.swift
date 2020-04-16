@@ -25,7 +25,7 @@ class ADetailViewController: UIViewController {
     
     private lazy var imageView: UIImageView = {
         let iv = UIImageView(image: UIImage(systemName: "video"))
-        iv.backgroundColor = .black
+        iv.backgroundColor = .systemYellow
         iv.contentMode = .scaleAspectFit
         return iv
     }()
