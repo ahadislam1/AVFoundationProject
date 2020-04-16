@@ -142,7 +142,7 @@ extension ADetailViewController: UIImagePickerControllerDelegate, UINavigationCo
         switch mediaType {
         case "public.image":
             if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                imageView.image = textToImage(drawText: "TESTTINGING", inImage: originalImage, atPoint: CGPoint(x: 20, y: 20))
+                imageView.image = textToImage(drawText: "TESTTINGING", inImage: originalImage, atPoint: CGPoint(x: originalImage.size.width / 2, y: 20))
 
                 dismiss(animated: true, completion: nil)
             }
