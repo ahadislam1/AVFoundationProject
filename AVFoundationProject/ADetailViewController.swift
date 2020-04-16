@@ -67,9 +67,37 @@ class ADetailViewController: UIViewController {
         present(alertController, animated: true)
     }
     
+    @objc
+    private func doneButtonPressed() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     private func showPicker(sourceType: UIImagePickerController.SourceType) {
         imagePickerController.sourceType = sourceType
         present(imagePickerController, animated: true)
+    }
+    
+    private func textToImage(drawText text: String, inImage image: UIImage, atPoint point: CGPoint) -> UIImage? {
+        let textColor = UIColor.white
+        let textFont = UIFont.systemFont(ofSize: image.size.width / 24)
+        
+        let scale = UIScreen.main.scale
+        print("Image size is: \(image.size)")
+        UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
+        
+        let textFontAttributes = [
+            NSAttributedString.Key.font: textFont,
+        NSAttributedString.Key.foregroundColor: textColor,
+        NSAttributedString.Key.strokeColor: UIColor.systemFill]
+            as [NSAttributedString.Key: Any]
+        image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
+        let rect = CGRect(origin: point, size: image.size)
+        text.draw(in: rect, withAttributes: textFontAttributes)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
     
     fileprivate func configureView() {
@@ -106,5 +134,25 @@ class ADetailViewController: UIViewController {
 }
 
 extension ADetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String else {
+            return
+        }
+        
+        switch mediaType {
+        case "public.image":
+            if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                imageView.image = textToImage(drawText: "TESTTINGING", inImage: originalImage, atPoint: CGPoint(x: 20, y: 20))
+
+                dismiss(animated: true, completion: nil)
+            }
+        case "public.movie":
+            if let mediaURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL, let image = mediaURL.videoPreviewThumbnail() {
+                imageView.image = image
+                dismiss(animated: true, completion: nil)
+            }
+        default:
+            break
+        }
+    }
 }
