@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ADetailViewControllerDelegate: AnyObject {
+    func didPressDone(_ object: AhadMedia)
+}
+
 class ADetailViewController: UIViewController {
     
     private lazy var imagePickerController: UIImagePickerController = {
@@ -18,8 +22,13 @@ class ADetailViewController: UIViewController {
         return pc
     }()
     
-    private lazy var barButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(barButtonPressed))
+    private lazy var selectBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(selectBarButtonPressed))
+        return button
+    }()
+    
+    private lazy var doneButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
         return button
     }()
     
@@ -39,6 +48,10 @@ class ADetailViewController: UIViewController {
         return tf
     }()
     
+    weak var delegate: ADetailViewControllerDelegate?
+    
+    var object: AhadMedia?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +61,7 @@ class ADetailViewController: UIViewController {
     }
     
     @objc
-    private func barButtonPressed() {
+    private func selectBarButtonPressed() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] alert in
@@ -69,7 +82,13 @@ class ADetailViewController: UIViewController {
     
     @objc
     private func doneButtonPressed() {
-        dismiss(animated: true, completion: nil)
+        if let object = object, let image = object.image {
+            // TODO: Rewrite.
+            let newImage = textToImage(drawText: textField.text ?? "text", inImage: image, atPoint: CGPoint(x: image.size.width * 0.5, y: image.size.height * 0.2))
+            let newObject = AhadMedia(image: newImage, videoURL: object.videoURL)
+            delegate?.didPressDone(newObject)
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     private func showPicker(sourceType: UIImagePickerController.SourceType) {
@@ -108,7 +127,7 @@ class ADetailViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        navigationItem.rightBarButtonItem = barButton
+        navigationItem.rightBarButtonItems = [doneButton, selectBarButton]
     }
     
     private func setupImageView() {
@@ -142,13 +161,15 @@ extension ADetailViewController: UIImagePickerControllerDelegate, UINavigationCo
         switch mediaType {
         case "public.image":
             if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                imageView.image = textToImage(drawText: "TESTTINGING", inImage: originalImage, atPoint: CGPoint(x: originalImage.size.width / 2, y: 20))
+                imageView.image = originalImage
+                object = AhadMedia(image: originalImage, videoURL: nil)
 
                 dismiss(animated: true, completion: nil)
             }
         case "public.movie":
             if let mediaURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL, let image = mediaURL.videoPreviewThumbnail() {
                 imageView.image = image
+                object = AhadMedia(image: image, videoURL: mediaURL)
                 dismiss(animated: true, completion: nil)
             }
         default:

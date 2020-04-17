@@ -15,7 +15,7 @@ class AhadViewController: UIViewController {
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .systemGroupedBackground
-        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+        cv.register(AhadCell.self, forCellWithReuseIdentifier: "ahadCell")
         return cv
     }()
     
@@ -23,6 +23,12 @@ class AhadViewController: UIViewController {
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonPressed))
         return button
     }()
+    
+    private var mediaObjects = [AhadMedia]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +38,9 @@ class AhadViewController: UIViewController {
     
     @objc
     private func addBarButtonPressed() {
-        navigationController?.pushViewController(ADetailViewController(), animated: true)
+        let adVC = ADetailViewController()
+        adVC.delegate = self
+        navigationController?.pushViewController(adVC, animated: true)
     }
     
     private func configureView() {
@@ -63,11 +71,32 @@ class AhadViewController: UIViewController {
 
 extension AhadViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return mediaObjects.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ahadCell", for: indexPath) as? AhadCell else {
+            fatalError("Could not dequeue ahadcell")
+        }
+        cell.configureCell(mediaObjects[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: view.frame.width * 0.9, height: view.frame.height * 0.3)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: view.frame.width * 0.1, left: 0, bottom: view.frame.width * 0.1, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        view.frame.width * 0.1
+    }
+}
+
+extension AhadViewController: ADetailViewControllerDelegate {
+    func didPressDone(_ object: AhadMedia) {
+        mediaObjects.append(object)
     }
 }
