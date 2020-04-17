@@ -18,15 +18,15 @@ class Operations {
 
     
   ///==========================================================================================
-    static let operationSet: Set<Character> = ["+", "-", "/", "*"]
+    static let operationSet: Set<Character> = ["+", "*"]
     
     var a: Int
     var b: Int
     var operationator: Character
     
     init() {
-        self.a = Int.random(in: 0...10)
-        self.b = Int.random(in: 0...10)
+        self.a = Int.random(in: 2...10)
+        self.b = Int.random(in: 2...10)
         self.operationator = Operations.operationSet.randomElement() ?? "+"
         
     }
