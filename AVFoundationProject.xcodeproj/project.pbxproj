@@ -98,6 +98,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BA771942449453C001C9F9F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BA7718E244918EA001C9F9F /* AhadCell.swift */,
+				0BEB26952448C6EC006E3104 /* ADetailViewController.swift */,
+				0BB17EB52447892500D12FC4 /* AhadViewController.swift */,
+				0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */,
+				BE4BEED8244942FB00FFFCEF /* MathViewController.swift */,
+				0BB17EB92447893100D12FC4 /* OscarViewController.swift */,
+				0BB17E94244788AE00D12FC4 /* ViewController.swift */,
+				A6059A742448E35800124018 /* LiliaCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0BA7719524494550001C9F9F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */,
+				0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0BA7719624494561001C9F9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0BA7719024491CEF001C9F9F /* AhadMedia.swift */,
+				BE4BEED7244942FB00FFFCEF /* Operations.swift */,
+				0BA7719224492741001C9F9F /* VideoEditor.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0BA771972449456F001C9F9F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0BB17E9E244788B300D12FC4 /* LaunchScreen.storyboard */,
+				A6059A722448E34E00124018 /* LiliaStoryboard.storyboard */,
+				BE4BEED5244942DA00FFFCEF /* Pencil.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		0BB17E84244788AE00D12FC4 = {
 			isa = PBXGroup;
 			children = (
@@ -121,28 +165,16 @@
 		0BB17E8F244788AE00D12FC4 /* AVFoundationProject */ = {
 			isa = PBXGroup;
 			children = (
-				0BB17E90244788AE00D12FC4 /* AppDelegate.swift */,
-				0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */,
-				0BB17E94244788AE00D12FC4 /* ViewController.swift */,
-				0BB17EB52447892500D12FC4 /* AhadViewController.swift */,
-				0BA7719024491CEF001C9F9F /* AhadMedia.swift */,
-				0BEB26952448C6EC006E3104 /* ADetailViewController.swift */,
-				0BA7718E244918EA001C9F9F /* AhadCell.swift */,
-				0BA7719224492741001C9F9F /* VideoEditor.swift */,
-				0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */,
-				A6059A742448E35800124018 /* LiliaCell.swift */,
-				0BB17EB92447893100D12FC4 /* OscarViewController.swift */,
-				BE4BEED5244942DA00FFFCEF /* Pencil.storyboard */,
-				BE4BEED8244942FB00FFFCEF /* MathViewController.swift */,
-				BE4BEED7244942FB00FFFCEF /* Operations.swift */,
-				0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */,
-				0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */,
-				A6059A722448E34E00124018 /* LiliaStoryboard.storyboard */,
-				0BB17E9C244788B300D12FC4 /* Assets.xcassets */,
-				0BB17E9E244788B300D12FC4 /* LaunchScreen.storyboard */,
 				BE0D7E3D2447B22D005F3C50 /* GoogleService-Info.plist */,
 				0BB17EA1244788B300D12FC4 /* Info.plist */,
+				0BB17E90244788AE00D12FC4 /* AppDelegate.swift */,
+				0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */,
+				0BB17E9C244788B300D12FC4 /* Assets.xcassets */,
 				0BB17E99244788AE00D12FC4 /* AVFoundationProject.xcdatamodeld */,
+				0BA771942449453C001C9F9F /* Controllers */,
+				0BA7719524494550001C9F9F /* Extensions */,
+				0BA7719624494561001C9F9F /* Models */,
+				0BA771972449456F001C9F9F /* Storyboards */,
 			);
 			path = AVFoundationProject;
 			sourceTree = "<group>";
