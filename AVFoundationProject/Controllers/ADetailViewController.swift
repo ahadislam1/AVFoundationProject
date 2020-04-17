@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ADetailViewControllerDelegate: AnyObject {
-    func didPressDone(_ object: AhadMedia)
+    func didPressDone(_ object: CDMediaObject)
 }
 
 class ADetailViewController: UIViewController {
@@ -85,7 +85,7 @@ class ADetailViewController: UIViewController {
         if let object = object, let image = object.image {
             // TODO: Rewrite.
             let newImage = textToImage(drawText: textField.text ?? "text", inImage: image, atPoint: CGPoint(x: image.size.width * 0.5, y: image.size.height * 0.2))
-            let newObject = AhadMedia(image: newImage, videoURL: object.videoURL)
+            let newObject = CoreDataManager.shared.createMediaObject((newImage?.jpegData(compressionQuality: 1.0))!, videoURL: object.videoURL)
             delegate?.didPressDone(newObject)
         }
         navigationController?.popViewController(animated: true)

@@ -66,10 +66,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0:
+        case 1:
             let vc = UIStoryboard(name: "Pencil", bundle: nil).instantiateInitialViewController() ?? OscarViewController()
             navigationController?.pushViewController(vc, animated: true)
-        case 1:
+        case 0:
             navigationController?.pushViewController(AhadViewController(), animated: true)
         default:
             break

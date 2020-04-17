@@ -19,6 +19,9 @@ class CoreDataManager {
     
     func createMediaObject(_ imageData: Data, videoURL: URL?) -> CDMediaObject {
         let mediaObject = CDMediaObject(entity: CDMediaObject.entity(), insertInto: context)
+        
+        
+        mediaObject.date = Date()
         mediaObject.id = UUID().uuidString
         mediaObject.imageData = imageData
         if let videoURL = videoURL {

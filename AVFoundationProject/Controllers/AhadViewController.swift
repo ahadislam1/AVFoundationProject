@@ -24,7 +24,7 @@ class AhadViewController: UIViewController {
         return button
     }()
     
-    private var mediaObjects = [AhadMedia]() {
+    private var mediaObjects = [CDMediaObject]() {
         didSet {
             collectionView.reloadData()
         }
@@ -32,7 +32,7 @@ class AhadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
         configureView()
     }
     
@@ -41,6 +41,10 @@ class AhadViewController: UIViewController {
         let adVC = ADetailViewController()
         adVC.delegate = self
         navigationController?.pushViewController(adVC, animated: true)
+    }
+    
+    private func loadData() {
+        mediaObjects = CoreDataManager.shared.fetchMediaObjects()
     }
     
     private func configureView() {
@@ -96,7 +100,7 @@ extension AhadViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 extension AhadViewController: ADetailViewControllerDelegate {
-    func didPressDone(_ object: AhadMedia) {
+    func didPressDone(_ object: CDMediaObject) {
         mediaObjects.append(object)
     }
 }
