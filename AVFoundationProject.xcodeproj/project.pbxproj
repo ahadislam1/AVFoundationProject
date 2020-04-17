@@ -12,6 +12,10 @@
 		0BA7718F244918EA001C9F9F /* AhadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7718E244918EA001C9F9F /* AhadCell.swift */; };
 		0BA7719124491CEF001C9F9F /* AhadMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7719024491CEF001C9F9F /* AhadMedia.swift */; };
 		0BA7719324492741001C9F9F /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7719224492741001C9F9F /* VideoEditor.swift */; };
+		0BA77199244947BD001C9F9F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA77198244947BD001C9F9F /* FirestoreService.swift */; };
+		0BA7719B24494C1F001C9F9F /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7719A24494C1F001C9F9F /* UIViewController+Alerts.swift */; };
+		0BA7719D24494D8D001C9F9F /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7719C24494D8D001C9F9F /* ActivityCell.swift */; };
+		0BA771AB24495A91001C9F9F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA771AA24495A90001C9F9F /* CoreDataManager.swift */; };
 		0BB17E91244788AE00D12FC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E90244788AE00D12FC4 /* AppDelegate.swift */; };
 		0BB17E93244788AE00D12FC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */; };
 		0BB17E95244788AE00D12FC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E94244788AE00D12FC4 /* ViewController.swift */; };
@@ -49,6 +53,10 @@
 		0BA7718E244918EA001C9F9F /* AhadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhadCell.swift; sourceTree = "<group>"; };
 		0BA7719024491CEF001C9F9F /* AhadMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhadMedia.swift; sourceTree = "<group>"; };
 		0BA7719224492741001C9F9F /* VideoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
+		0BA77198244947BD001C9F9F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		0BA7719A24494C1F001C9F9F /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		0BA7719C24494D8D001C9F9F /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		0BA771AA24495A90001C9F9F /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0BB17E8D244788AE00D12FC4 /* AVFoundationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB17E90244788AE00D12FC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 				0BB17EB52447892500D12FC4 /* AhadViewController.swift */,
 				0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */,
 				BE4BEED8244942FB00FFFCEF /* MathViewController.swift */,
+				0BA7719C24494D8D001C9F9F /* ActivityCell.swift */,
 				0BB17EB92447893100D12FC4 /* OscarViewController.swift */,
 				0BB17E94244788AE00D12FC4 /* ViewController.swift */,
 				A6059A742448E35800124018 /* LiliaCell.swift */,
@@ -118,6 +127,7 @@
 			children = (
 				0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */,
 				0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */,
+				0BA7719A24494C1F001C9F9F /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +181,8 @@
 				0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */,
 				0BB17E9C244788B300D12FC4 /* Assets.xcassets */,
 				0BB17E99244788AE00D12FC4 /* AVFoundationProject.xcdatamodeld */,
+				0BA771AA24495A90001C9F9F /* CoreDataManager.swift */,
+				0BA77198244947BD001C9F9F /* FirestoreService.swift */,
 				0BA771942449453C001C9F9F /* Controllers */,
 				0BA7719524494550001C9F9F /* Extensions */,
 				0BA7719624494561001C9F9F /* Models */,
@@ -380,12 +392,16 @@
 			files = (
 				0BB17EBA2447893100D12FC4 /* OscarViewController.swift in Sources */,
 				0BEB26962448C6EC006E3104 /* ADetailViewController.swift in Sources */,
+				0BA77199244947BD001C9F9F /* FirestoreService.swift in Sources */,
 				0BA7718D244903A6001C9F9F /* Data+ConvertToURL.swift in Sources */,
 				0BA7718F244918EA001C9F9F /* AhadCell.swift in Sources */,
 				0BA7719324492741001C9F9F /* VideoEditor.swift in Sources */,
 				0BA7719124491CEF001C9F9F /* AhadMedia.swift in Sources */,
+				0BA7719B24494C1F001C9F9F /* UIViewController+Alerts.swift in Sources */,
 				0BB17EB82447892A00D12FC4 /* LiliaViewController.swift in Sources */,
+				0BA771AB24495A91001C9F9F /* CoreDataManager.swift in Sources */,
 				0BB17E95244788AE00D12FC4 /* ViewController.swift in Sources */,
+				0BA7719D24494D8D001C9F9F /* ActivityCell.swift in Sources */,
 				0BB17EB62447892500D12FC4 /* AhadViewController.swift in Sources */,
 				BE4BEED9244942FB00FFFCEF /* Operations.swift in Sources */,
 				0BA7718B2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift in Sources */,
