@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BA7718B2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */; };
+		0BA7718D244903A6001C9F9F /* Data+ConvertToURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */; };
 		0BB17E91244788AE00D12FC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E90244788AE00D12FC4 /* AppDelegate.swift */; };
 		0BB17E93244788AE00D12FC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */; };
 		0BB17E95244788AE00D12FC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17E94244788AE00D12FC4 /* ViewController.swift */; };
@@ -17,7 +19,6 @@
 		0BB17EB62447892500D12FC4 /* AhadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17EB52447892500D12FC4 /* AhadViewController.swift */; };
 		0BB17EB82447892A00D12FC4 /* LiliaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */; };
 		0BB17EBA2447893100D12FC4 /* OscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB17EB92447893100D12FC4 /* OscarViewController.swift */; };
-		0BB17EBC24478C9A00D12FC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BB17EBB24478C9A00D12FC4 /* GoogleService-Info.plist */; };
 		0BEB26962448C6EC006E3104 /* ADetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB26952448C6EC006E3104 /* ADetailViewController.swift */; };
 		8D9C9AA5362B78AF0D258D75 /* Pods_AVFoundationProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20966E35156D4E0F55360143 /* Pods_AVFoundationProjectTests.framework */; };
 		A6059A732448E34E00124018 /* LiliaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6059A722448E34E00124018 /* LiliaStoryboard.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+VideoPreviewThumbnail.swift"; sourceTree = "<group>"; };
+		0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+ConvertToURL.swift"; sourceTree = "<group>"; };
 		0BB17E8D244788AE00D12FC4 /* AVFoundationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB17E90244788AE00D12FC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +54,6 @@
 		0BB17EB52447892500D12FC4 /* AhadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhadViewController.swift; sourceTree = "<group>"; };
 		0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiliaViewController.swift; sourceTree = "<group>"; };
 		0BB17EB92447893100D12FC4 /* OscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscarViewController.swift; sourceTree = "<group>"; };
-		0BB17EBB24478C9A00D12FC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BEB26952448C6EC006E3104 /* ADetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADetailViewController.swift; sourceTree = "<group>"; };
 		20966E35156D4E0F55360143 /* Pods_AVFoundationProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVFoundationProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2501AD38C1D3EF022F50939D /* Pods_AVFoundationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVFoundationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,8 @@
 				0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */,
 				A6059A742448E35800124018 /* LiliaCell.swift */,
 				0BB17EB92447893100D12FC4 /* OscarViewController.swift */,
+				0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */,
+				0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */,
 				A6059A722448E34E00124018 /* LiliaStoryboard.storyboard */,
 				0BB17E9C244788B300D12FC4 /* Assets.xcassets */,
 				0BB17E9E244788B300D12FC4 /* LaunchScreen.storyboard */,
@@ -325,9 +329,11 @@
 			files = (
 				0BB17EBA2447893100D12FC4 /* OscarViewController.swift in Sources */,
 				0BEB26962448C6EC006E3104 /* ADetailViewController.swift in Sources */,
+				0BA7718D244903A6001C9F9F /* Data+ConvertToURL.swift in Sources */,
 				0BB17EB82447892A00D12FC4 /* LiliaViewController.swift in Sources */,
 				0BB17E95244788AE00D12FC4 /* ViewController.swift in Sources */,
 				0BB17EB62447892500D12FC4 /* AhadViewController.swift in Sources */,
+				0BA7718B2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift in Sources */,
 				0BB17E91244788AE00D12FC4 /* AppDelegate.swift in Sources */,
 				A6059A752448E35800124018 /* LiliaCell.swift in Sources */,
 				0BB17E9B244788AE00D12FC4 /* AVFoundationProject.xcdatamodeld in Sources */,
@@ -485,7 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S55722VFBC;
+				DEVELOPMENT_TEAM = 4MS4J77WTY;
 				INFOPLIST_FILE = AVFoundationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,7 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S55722VFBC;
+				DEVELOPMENT_TEAM = 4MS4J77WTY;
 				INFOPLIST_FILE = AVFoundationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
