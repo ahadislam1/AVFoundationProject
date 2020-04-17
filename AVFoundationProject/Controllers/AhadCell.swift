@@ -23,8 +23,10 @@ class AhadCell: UICollectionViewCell {
         setupImageView()
     }
     
-    public func configureCell(_ object: AhadMedia) {
-        imageView.image = object.image
+    public func configureCell(_ object: CDMediaObject) {
+        if let data = object.imageData {
+            imageView.image = UIImage(data: data)
+        }
     }
     
     private func setupImageView() {
