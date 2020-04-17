@@ -8,23 +8,26 @@
 
 import UIKit
 import Vision
+import AVFoundation
 
 class MathViewController: UIViewController {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
     @IBOutlet weak var operationLabel: UILabel!
     
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
+    var audioPlayer = AVAudioPlayer()
+    var wrongAudioPlayer = AVAudioPlayer()
+    var doneAudioPlayer = AVAudioPlayer()
+    
     var someOperation = Operations()
     
-    func displayOperation() {
-        operationLabel.text = "\(someOperation.a) \(someOperation.operationator) \(someOperation.b)"
-    }
-    
-    func displayRandomOperation() {
-        someOperation.randomize()
-        operationLabel.text = "\(someOperation.a) \(someOperation.operationator) \(someOperation.b)"
-    }
-
+    var correctAnswers = 0
+    var wrongAnswers = 0
+    var totalAnswers = 0
     
     var textRecognitionRequest = VNRecognizeTextRequest()
     var recognizedText = ""
@@ -37,71 +40,15 @@ class MathViewController: UIViewController {
     var opacity: CGFloat = 1.0
     var swiped = false
     
-    @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var shareButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .lightGray
         displayOperation()
         processImage()
+        playAudioFromProject()
+        playAudioFromProjectTwo()
+        playFinalAudio()
     }
-    
-    func hideButtons() {
-        resetButton.isHidden = true
-        button.isHidden = true
-        shareButton.isHidden = true
-        operationLabel.isHidden = true
-    }
-    
-    func unhideButtons() {
-        resetButton.isHidden = false
-        button.isHidden = false
-        shareButton.isHidden = false
-        operationLabel.isHighlighted = false
-    }
-    
-    
-    func processImage() {
-        textRecognitionRequest = VNRecognizeTextRequest(completionHandler: { (request, error) in
-            if let results = request.results, !results.isEmpty {
-                if let requestResults = request.results as? [VNRecognizedTextObservation] {
-                    self.recognizedText = ""
-                    for observation in requestResults {
-                        guard let candidiate = observation.topCandidates(1).first else { return }
-                        self.recognizedText += candidiate.string
-                        //            self.recognizedText += "\n"
-                        self.someString = self.recognizedText
-                        //            print(self.recognizedText)
-                    }
-                    
-                }
-            }
-        })
-        
-    }
-    
-    func documentCameraViewController() {
-        //    let image = UIImage(named: "three")?.cgImage
-        //    mainImageView.image = mainImageView.image?.cgImage
-        let screenShot = self.view.takeScreenshot()
-        mainImageView.image = screenShot
-        let image = mainImageView.image?.cgImage
-        
-        let handler = VNImageRequestHandler(cgImage: image!, options: [:])
-        do {
-            try handler.perform([textRecognitionRequest])
-        } catch {
-            print(error)
-        }
-    }
-    
-    //  func saveImage() {
-    //    UIImageWriteToSavedPhotosAlbum(mainImageView.image!, self, nil, nil)
-    //  }
-    
-    
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         hideButtons()
@@ -114,18 +61,18 @@ class MathViewController: UIViewController {
     
     
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
-        // 1
+        
         UIGraphicsBeginImageContext(view.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
         tempImageView.image?.draw(in: view.bounds)
         
-        // 2
+        
         context.move(to: fromPoint)
         context.addLine(to: toPoint)
         
-        // 3
+        
         context.setLineCap(.round)
         context.setBlendMode(.normal)
         context.setLineWidth(brushWidth)
@@ -145,12 +92,10 @@ class MathViewController: UIViewController {
             return
         }
         
-        
         swiped = true
         let currentPoint = touch.location(in: view)
         drawLine(from: lastPoint, to: currentPoint)
         
- 
         lastPoint = currentPoint
     }
     
@@ -159,7 +104,6 @@ class MathViewController: UIViewController {
         if !swiped {
             drawLine(from: lastPoint, to: lastPoint)
         }
-        
         
         UIGraphicsBeginImageContext(mainImageView.frame.size)
         mainImageView.image?.draw(in: view.bounds, blendMode: .normal, alpha: 1.0)
@@ -170,31 +114,134 @@ class MathViewController: UIViewController {
         tempImageView.image = nil
     }
     
+    func displayOperation() {
+        operationLabel.text = "\(someOperation.a) \(someOperation.operationator) \(someOperation.b)"
+    }
+    
+    func displayRandomOperation() {
+        someOperation.randomize()
+        operationLabel.text = "\(someOperation.a) \(someOperation.operationator) \(someOperation.b)"
+    }
+    
+    func hideButtons() {
+        resetButton.isHidden = true
+        button.isHidden = true
+        shareButton.isHidden = true
+        operationLabel.isHidden = true
+    }
+    
+    func unhideButtons() {
+        resetButton.isHidden = false
+        button.isHidden = false
+        shareButton.isHidden = false
+        operationLabel.isHighlighted = false
+    }
+    
+    func processImage() {
+        textRecognitionRequest = VNRecognizeTextRequest(completionHandler: { (request, error) in
+            if let results = request.results, !results.isEmpty {
+                if let requestResults = request.results as? [VNRecognizedTextObservation] {
+                    self.recognizedText = ""
+                    for observation in requestResults {
+                        guard let candidiate = observation.topCandidates(1).first else { return }
+                        self.recognizedText += candidiate.string
+                        self.someString = self.recognizedText
+                    }
+                    
+                }
+            }
+        })
+        
+    }
+    
+    func captureImage() {
+        let screenShot = self.view.takeScreenshot()
+        mainImageView.image = screenShot
+        let image = mainImageView.image?.cgImage
+        
+        let handler = VNImageRequestHandler(cgImage: image!, options: [:])
+        do {
+            try handler.perform([textRecognitionRequest])
+        } catch {
+            print(error)
+        }
+    }
+    
+    private func playAudioFromProject() {
+        let sound = Bundle.main.path(forResource: "correct", ofType: "mp3")
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        } catch {
+            print("error")
+        }
+    }
+    
+    private func playAudioFromProjectTwo() {
+        let sound = Bundle.main.path(forResource: "wrong", ofType: "mp3")
+        
+        do {
+            wrongAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        } catch {
+            print("error")
+        }
+    }
+    
+    private func playFinalAudio() {
+          let sound = Bundle.main.path(forResource: "done", ofType: "mp3")
+          
+          do {
+              doneAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+          } catch {
+              print("error")
+          }
+      }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Game Over", message: "Final correct answers \(correctAnswers) \n Final wrong answers \(wrongAnswers)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
     
     @IBAction func resetPressed(_ sender: Any) {
         mainImageView.image = nil
     }
     
-    @IBAction func sharePressed(_ sender: Any) {
-        hideButtons()
-        documentCameraViewController()
-        if someString == "\(someOperation.solution())" {
-            mainImageView.image = nil
-            operationLabel.isHidden = false
-            view.backgroundColor = .systemGreen
-            displayRandomOperation()
-            print("Correct!")
+    @IBAction func submitPressed(_ sender: Any) {
+        if totalAnswers < 5 {
+            hideButtons()
+            captureImage()
+            if someString == "\(someOperation.solution())" {
+                mainImageView.image = nil
+                operationLabel.isHidden = false
+                audioPlayer.play()
+                view.backgroundColor = .systemGreen
+                correctAnswers += 1
+                totalAnswers += 1
+                displayRandomOperation()
+            } else {
+                mainImageView.image = nil
+                operationLabel.isHidden = false
+                wrongAudioPlayer.play()
+                view.backgroundColor = .systemRed
+                wrongAnswers += 1
+                totalAnswers += 1
+                displayRandomOperation()
+            }
         } else {
+            doneAudioPlayer.play()
+            showAlert()
             mainImageView.image = nil
             operationLabel.isHidden = false
-            view.backgroundColor = .systemRed
             displayRandomOperation()
-            print("Wrong")
+            wrongAnswers = 0
+            correctAnswers = 0
+            totalAnswers = 0
         }
-       
-        print("current number is \(recognizedText)")
+        
     }
-
+    
 }
 
 extension UIView {
@@ -213,5 +260,4 @@ extension UIView {
         }
         return UIImage()
     }
-    
 }
