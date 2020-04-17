@@ -27,6 +27,9 @@
 		A6059A732448E34E00124018 /* LiliaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6059A722448E34E00124018 /* LiliaStoryboard.storyboard */; };
 		A6059A752448E35800124018 /* LiliaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6059A742448E35800124018 /* LiliaCell.swift */; };
 		BE0D7E3E2447B22E005F3C50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE0D7E3D2447B22D005F3C50 /* GoogleService-Info.plist */; };
+		BE4BEED6244942DA00FFFCEF /* Pencil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4BEED5244942DA00FFFCEF /* Pencil.storyboard */; };
+		BE4BEED9244942FB00FFFCEF /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4BEED7244942FB00FFFCEF /* Operations.swift */; };
+		BE4BEEDA244942FB00FFFCEF /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4BEED8244942FB00FFFCEF /* MathViewController.swift */; };
 		CAB9C0186D522804E4B0592A /* Pods_AVFoundationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2501AD38C1D3EF022F50939D /* Pods_AVFoundationProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +73,9 @@
 		A6059A742448E35800124018 /* LiliaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiliaCell.swift; sourceTree = "<group>"; };
 		B781E0A15EF7B0E45CE1CD36 /* Pods-AVFoundationProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationProjectTests.release.xcconfig"; path = "Target Support Files/Pods-AVFoundationProjectTests/Pods-AVFoundationProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE0D7E3D2447B22D005F3C50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE4BEED5244942DA00FFFCEF /* Pencil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pencil.storyboard; sourceTree = "<group>"; };
+		BE4BEED7244942FB00FFFCEF /* Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		BE4BEED8244942FB00FFFCEF /* MathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,9 @@
 				0BB17EB72447892A00D12FC4 /* LiliaViewController.swift */,
 				A6059A742448E35800124018 /* LiliaCell.swift */,
 				0BB17EB92447893100D12FC4 /* OscarViewController.swift */,
+				BE4BEED5244942DA00FFFCEF /* Pencil.storyboard */,
+				BE4BEED8244942FB00FFFCEF /* MathViewController.swift */,
+				BE4BEED7244942FB00FFFCEF /* Operations.swift */,
 				0BA7718C244903A6001C9F9F /* Data+ConvertToURL.swift */,
 				0BA7718A2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift */,
 				A6059A722448E34E00124018 /* LiliaStoryboard.storyboard */,
@@ -254,6 +263,7 @@
 				0BB17EA0244788B300D12FC4 /* LaunchScreen.storyboard in Resources */,
 				A6059A732448E34E00124018 /* LiliaStoryboard.storyboard in Resources */,
 				0BB17E9D244788B300D12FC4 /* Assets.xcassets in Resources */,
+				BE4BEED6244942DA00FFFCEF /* Pencil.storyboard in Resources */,
 				BE0D7E3E2447B22E005F3C50 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,8 +355,10 @@
 				0BB17EB82447892A00D12FC4 /* LiliaViewController.swift in Sources */,
 				0BB17E95244788AE00D12FC4 /* ViewController.swift in Sources */,
 				0BB17EB62447892500D12FC4 /* AhadViewController.swift in Sources */,
+				BE4BEED9244942FB00FFFCEF /* Operations.swift in Sources */,
 				0BA7718B2449039A001C9F9F /* URL+VideoPreviewThumbnail.swift in Sources */,
 				0BB17E91244788AE00D12FC4 /* AppDelegate.swift in Sources */,
+				BE4BEEDA244942FB00FFFCEF /* MathViewController.swift in Sources */,
 				A6059A752448E35800124018 /* LiliaCell.swift in Sources */,
 				0BB17E9B244788AE00D12FC4 /* AVFoundationProject.xcdatamodeld in Sources */,
 				0BB17E93244788AE00D12FC4 /* SceneDelegate.swift in Sources */,
