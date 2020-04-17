@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Name Feed-->
+        <scene sceneID="b7v-nI-4eV">
+            <objects>
+                <viewController id="LXu-sI-eGD" customClass="LiliaViewController" customModule="AVFoundationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hjs-3D-7ph">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8xx-Fq-euF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EdW-5F-sub">
+                                    <size key="itemSize" width="282" height="283"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="LiliaCell" reuseIdentifier="LiliaCell" id="FjL-0b-LAk" customClass="LiliaCell" customModule="AVFoundationProject" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="0.0" width="340" height="283"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xcC-o0-Rd7">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="283"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uni-Pw-R8m">
+                                                    <rect key="frame" x="8" y="64" width="73" height="64"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YtY-xk-L1B">
+                                                    <rect key="frame" x="89" y="62" width="73" height="66"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="73" id="1Fr-XS-9Ii"/>
+                                                        <constraint firstAttribute="height" constant="68.5" id="kdZ-1O-ugz"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0MA-mk-97B">
+                                                    <rect key="frame" x="170" y="64" width="73" height="66"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="68.5" id="Yz6-xS-fL1"/>
+                                                        <constraint firstAttribute="width" constant="73" id="wjI-cy-bfZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YcJ-yk-rMS">
+                                                    <rect key="frame" x="251" y="64" width="73" height="66"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YcJ-yk-rMS" firstAttribute="leading" secondItem="0MA-mk-97B" secondAttribute="trailing" constant="8" id="1zX-XL-YPr"/>
+                                                <constraint firstItem="YtY-xk-L1B" firstAttribute="top" secondItem="xcC-o0-Rd7" secondAttribute="top" constant="61" id="4a9-M0-rR0"/>
+                                                <constraint firstItem="0MA-mk-97B" firstAttribute="baseline" secondItem="YcJ-yk-rMS" secondAttribute="baseline" id="CvW-At-76n"/>
+                                                <constraint firstItem="YtY-xk-L1B" firstAttribute="baseline" secondItem="YcJ-yk-rMS" secondAttribute="firstBaseline" id="Dlx-sB-vd8"/>
+                                                <constraint firstItem="YtY-xk-L1B" firstAttribute="leading" secondItem="uni-Pw-R8m" secondAttribute="trailing" constant="8" id="PTR-AQ-pov"/>
+                                                <constraint firstItem="0MA-mk-97B" firstAttribute="leading" secondItem="YtY-xk-L1B" secondAttribute="trailing" constant="8" id="RnZ-NI-0Nd"/>
+                                                <constraint firstItem="YtY-xk-L1B" firstAttribute="leading" secondItem="xcC-o0-Rd7" secondAttribute="leading" constant="89" id="Tv7-Kd-FPw"/>
+                                                <constraint firstItem="0MA-mk-97B" firstAttribute="top" secondItem="uni-Pw-R8m" secondAttribute="top" id="XZm-sx-e9g"/>
+                                                <constraint firstItem="0MA-mk-97B" firstAttribute="leading" secondItem="YtY-xk-L1B" secondAttribute="trailing" constant="8" id="aqp-y6-iV1"/>
+                                                <constraint firstItem="YtY-xk-L1B" firstAttribute="bottom" secondItem="uni-Pw-R8m" secondAttribute="bottom" id="jLr-mY-axh"/>
+                                                <constraint firstAttribute="trailing" secondItem="YcJ-yk-rMS" secondAttribute="trailing" constant="8" id="sGt-aH-YG5"/>
+                                                <constraint firstItem="YtY-xk-L1B" firstAttribute="baseline" secondItem="0MA-mk-97B" secondAttribute="firstBaseline" id="syL-eY-7bo"/>
+                                                <constraint firstItem="YcJ-yk-rMS" firstAttribute="leading" secondItem="0MA-mk-97B" secondAttribute="trailing" constant="8" id="y7B-gg-saQ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="340" height="283"/>
+                                        <connections>
+                                            <outlet property="imageFour" destination="YcJ-yk-rMS" id="AUo-Wn-tYC"/>
+                                            <outlet property="imageOne" destination="uni-Pw-R8m" id="cKy-ih-bbk"/>
+                                            <outlet property="imageThree" destination="0MA-mk-97B" id="uvT-Ca-ubV"/>
+                                            <outlet property="imageTwo" destination="YtY-xk-L1B" id="wef-XD-71t"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BGq-M7-KQR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Name Feed" id="zhj-5T-1ph">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="camera.fill" catalog="system" id="ApP-h3-Agu">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="LXu-sI-eGD" id="3bS-oW-NBt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraButton" destination="ApP-h3-Agu" id="qAO-jR-nHc"/>
+                        <outlet property="collectionView" destination="8xx-Fq-euF" id="9H1-ka-9Kl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agu-nj-wCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710.14492753623199" y="-615.40178571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3OP-As-0bY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xmo-NI-VKf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K2D-8P-PPO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LXu-sI-eGD" kind="relationship" relationship="rootViewController" id="Ssz-Gi-KGk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tdw-d4-5Sb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200.00000000000003" y="-615.40178571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+    </resources>
+</document>

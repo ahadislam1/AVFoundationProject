@@ -1,5 +1,5 @@
 //
-//  AhadViewController.swift
+//  OscarViewController.swift
 //  AVFoundationProject
 //
 //  Created by Ahad Islam on 4/15/20.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class AhadViewController: UIViewController {
+class OscarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .systemBlue
         // Do any additional setup after loading the view.
     }
     
