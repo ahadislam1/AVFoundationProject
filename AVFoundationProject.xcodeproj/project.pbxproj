@@ -30,6 +30,9 @@
 		BE4BEED6244942DA00FFFCEF /* Pencil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4BEED5244942DA00FFFCEF /* Pencil.storyboard */; };
 		BE4BEED9244942FB00FFFCEF /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4BEED7244942FB00FFFCEF /* Operations.swift */; };
 		BE4BEEDA244942FB00FFFCEF /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4BEED8244942FB00FFFCEF /* MathViewController.swift */; };
+		BE4BEEDF244972D400FFFCEF /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE4BEEDE244972D400FFFCEF /* correct.mp3 */; };
+		BE4BEEE12449762700FFFCEF /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE4BEEE02449762700FFFCEF /* wrong.mp3 */; };
+		BE4BEEE32449778300FFFCEF /* done.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE4BEEE22449778300FFFCEF /* done.mp3 */; };
 		CAB9C0186D522804E4B0592A /* Pods_AVFoundationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2501AD38C1D3EF022F50939D /* Pods_AVFoundationProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,9 @@
 		BE4BEED5244942DA00FFFCEF /* Pencil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pencil.storyboard; sourceTree = "<group>"; };
 		BE4BEED7244942FB00FFFCEF /* Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		BE4BEED8244942FB00FFFCEF /* MathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
+		BE4BEEDE244972D400FFFCEF /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		BE4BEEE02449762700FFFCEF /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		BE4BEEE22449778300FFFCEF /* done.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = done.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 				0BB17E92244788AE00D12FC4 /* SceneDelegate.swift */,
 				0BB17E9C244788B300D12FC4 /* Assets.xcassets */,
 				0BB17E99244788AE00D12FC4 /* AVFoundationProject.xcdatamodeld */,
+				BE4BEEDB24496DA800FFFCEF /* audio */,
 				0BA771942449453C001C9F9F /* Controllers */,
 				0BA7719524494550001C9F9F /* Extensions */,
 				0BA7719624494561001C9F9F /* Models */,
@@ -206,6 +213,16 @@
 				20966E35156D4E0F55360143 /* Pods_AVFoundationProjectTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE4BEEDB24496DA800FFFCEF /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				BE4BEEE22449778300FFFCEF /* done.mp3 */,
+				BE4BEEE02449762700FFFCEF /* wrong.mp3 */,
+				BE4BEEDE244972D400FFFCEF /* correct.mp3 */,
+			);
+			path = audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,9 +311,12 @@
 			files = (
 				0BB17EA0244788B300D12FC4 /* LaunchScreen.storyboard in Resources */,
 				A6059A732448E34E00124018 /* LiliaStoryboard.storyboard in Resources */,
+				BE4BEEE12449762700FFFCEF /* wrong.mp3 in Resources */,
 				0BB17E9D244788B300D12FC4 /* Assets.xcassets in Resources */,
+				BE4BEEE32449778300FFFCEF /* done.mp3 in Resources */,
 				BE4BEED6244942DA00FFFCEF /* Pencil.storyboard in Resources */,
 				BE0D7E3E2447B22E005F3C50 /* GoogleService-Info.plist in Resources */,
+				BE4BEEDF244972D400FFFCEF /* correct.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
